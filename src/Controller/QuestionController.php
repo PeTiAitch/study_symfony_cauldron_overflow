@@ -30,7 +30,7 @@ class QuestionController extends AbstractController
 
         $questionText = "I've been turned into a cat, any **thoughts** on how to turn back? While I'm **adorable**, I don't really care for cat food.";
 
-        dd($markdownParser);
+        dump($cache);
 
         $parsedQuestionText = $cache->get('markdown_' . md5($questionText), function () use ($markdownParser, $questionText) {
             return $markdownParser->transformMarkdown($questionText);
