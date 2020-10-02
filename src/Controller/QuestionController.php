@@ -3,10 +3,8 @@
 namespace App\Controller;
 
 use App\Service\MarkdownHelper;
-use Knp\Bundle\MarkdownBundle\MarkdownParserInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Contracts\Cache\CacheInterface;
 
 class QuestionController extends AbstractController
 {
@@ -21,9 +19,7 @@ class QuestionController extends AbstractController
     /**
      * @Route("/questions/{slug}", name = "app_question_show")
      */
-    public function show(string $slug, 
-                        MarkdownParserInterface $markdownParser, 
-                        CacheInterface $cache, MarkdownHelper $markdownHelper)
+    public function show(string $slug, MarkdownHelper $markdownHelper)
     {
         $answers = [
             'Make sure your cat is sitting `purrrfectly` still 🤣',
