@@ -29,7 +29,6 @@ class MarkdownHelper
         $this->cache = $cache;
 
         $this->isDebug = $isDebug;
-        dump($isDebug);
     }
 
     public function parse(string $source): string
