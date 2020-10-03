@@ -17,16 +17,29 @@ class MarkdownHelper
      */
     private $cache;
 
-    public function __construct(MarkdownParserInterface $markdownParser, CacheInterface $cache)
+    /**
+     * @var bool
+     */
+    private $isDebug;
+
+    public function __construct(MarkdownParserInterface $markdownParser, CacheInterface $cache, bool $isDebug)
     {
         $this->markdownParser = $markdownParser;
 
         $this->cache = $cache;
+
+        $this->isDebug = $isDebug;
+        dump($isDebug);
     }
 
     public function parse(string $source): string
     {
-        return $parsedQuestionText = $this->cache->get('markdown_' . md5($source), function () use ($source) {
+        if ($this->isDebug) {
+            return $this->markdownParser->transformMarkdown($source);
+        }
+
+        // MN: If cache key exists returns the cache, if not, saves new cache
+        return $this->cache->get('markdown_' . md5($source), function () use ($source) {
             return $this->markdownParser->transformMarkdown($source);
         });
 
