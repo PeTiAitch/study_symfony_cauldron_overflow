@@ -40,7 +40,6 @@ class MarkdownHelper
         $this->isDebug = $isDebug;
 
         $this->logger = $mdLogger;
-        dump($mdLogger);
     }
 
     public function parse(string $source): string
