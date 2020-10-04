@@ -31,7 +31,7 @@ class MarkdownHelper
     public function __construct(MarkdownParserInterface $markdownParser, 
                                 CacheInterface $cache, 
                                 bool $isDebug, 
-                                LoggerInterface $markdownLogger)
+                                LoggerInterface $mdLogger)
     {
         $this->markdownParser = $markdownParser;
 
@@ -39,7 +39,8 @@ class MarkdownHelper
 
         $this->isDebug = $isDebug;
 
-        $this->logger = $markdownLogger;
+        $this->logger = $mdLogger;
+        dump($mdLogger);
     }
 
     public function parse(string $source): string
