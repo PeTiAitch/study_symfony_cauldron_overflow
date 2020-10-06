@@ -25,7 +25,8 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
-        "sensiolabs/security-checker": "^6.0"
+        "sensiolabs/security-checker": "^6.0",
+        "symfony/maker-bundle": "^1.21"
     },
     "config": {
         "optimize-autoloader": true,
