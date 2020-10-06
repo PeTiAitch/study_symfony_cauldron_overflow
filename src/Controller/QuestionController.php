@@ -39,13 +39,11 @@ class QuestionController extends AbstractController
     /**
      * @Route("/questions/{slug}", name = "app_question_show")
      */
-    public function show(string $slug, MarkdownHelper $markdownHelper, HubInterface $sentryHub)
+    public function show(string $slug, MarkdownHelper $markdownHelper)
     {
         if ($this->isDebug) {
             $this->logger->info('We are in debug mode!');
         }
-
-        dump($sentryHub);
 
         $answers = [
             'Make sure your cat is sitting `purrrfectly` still 🤣',
