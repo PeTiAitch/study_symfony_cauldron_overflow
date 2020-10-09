@@ -34,8 +34,17 @@ class QuestionRepository extends ServiceEntityRepository
     //     ;
     // }
 
+    /**
+     * @return Question[] Returns an array of Question objects
+     */
     public function findAllAskedOrderedByNewest()
     {
+        return $this->createQueryBuilder('q')
+            ->andWhere('q.askedAt IS NOT NULL')
+            ->orderBy('q.askedAt', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
     }
 
 
