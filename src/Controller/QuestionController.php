@@ -51,6 +51,7 @@ class QuestionController extends AbstractController
         $question = new Question();
         $question->setName('Missing pants')
         ->setSlug('missing-pants-' . rand(0, 1000))
+        ->setVotes(rand(-20, 50))
         ->setQuestion(<<<EOF
 Hi! So... I'm having a *weird* day. Yesterday, I cast a spell
 to make my dishes wash themselves. But while I was casting it,
