@@ -30,6 +30,7 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.3",
         "sensiolabs/security-checker": "^6.0",
         "symfony/maker-bundle": "^1.21"
     },
