@@ -32,7 +32,8 @@
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.3",
         "sensiolabs/security-checker": "^6.0",
-        "symfony/maker-bundle": "^1.21"
+        "symfony/maker-bundle": "^1.21",
+        "zenstruck/foundry": "^1.3"
     },
     "config": {
         "optimize-autoloader": true,
